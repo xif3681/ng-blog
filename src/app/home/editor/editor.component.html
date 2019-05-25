@@ -1,0 +1,49 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="home">
+        <div style="text-align:center">
+          <h1>
+            编写您的文章
+          </h1>
+        
+        </div>
+        <!-- 头部 -->
+        <div class="title-box">
+          <input type="text" id="txtTitle" maxlength="100" placeholder="输入文章标题" [(ngModel)]="data.title">
+          <span class="max-length">
+            <span class="max-length-change">0</span>/100</span>
+        </div>
+        <!-- 富文本编辑器 -->
+        <div class="section">
+          <quill-editor [(ngModel)]="editorContent"></quill-editor>
+        </div>
+        
+        <!-- 底部 -->
+        <div class="moreDiv">
+          <div class="form-group">
+            <label for="">文章标签</label>
+            <input type="text" name="" id="" [(ngModel)]="data.tags">
+        
+          </div>
+          <div class="form-group">
+            <label for="">个人分类</label>
+            <select name="" id="" [(ngModel)]="category">
+              <option [ngValue]="item" *ngFor="let item of categories">{{item.name}}</option>
+            </select>
+        
+          </div>
+          <div class="form-group">
+            <label for="">文章类型</label>
+            <select name="" id="" [(ngModel)]="type">
+              <option [ngValue]="item" *ngFor="let item of types">{{item.name}}</option>
+            </select>
+        
+          </div>
+        
+          <div class="form-group">
+            <button (click)="addAirtical()"> 发布文章</button>
+          </div>
+        </div>
+
+
+
+</div>
