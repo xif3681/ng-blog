@@ -1,3 +1,59 @@
-<p>
-  article works!
-</p>
+<table class="table table-bordered table-hover small-size">
+  <!-- <thead class="table-header">
+    <tr>
+
+      <th>位置编号</th>
+      <th>位置名称</th>
+      <th>位置经纬</th>
+    </tr>
+  </thead> -->
+  <tbody>
+    <tr *ngFor="let article of articles" class="lineheight cur-pointer" >
+      <td>
+        <div>
+          <h4 class="title">
+            <a >{{article.title}}</a>
+          </h4>
+          <!-- <p>{{}}</p> -->
+          <div class="info-box align-content-center">
+            <p>
+              <span class="date">{{article.date}}</span>
+            </p>
+            <p class="point"></p>
+            <p>
+              <span class="read-num">阅读数
+                <span class="num">270</span>
+              </span>
+            </p>
+            <p class="point"></p>
+            <p>
+              <span class="read-num">评论数
+                <span class="num">0</span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </td>
+      <td>
+
+        <div class="d-inline">
+          <a class="cur-pointer btn-a  d-inline" (click)="gotoDetail(article._id)">查看</a>
+          <a class="cur-pointer btn-a  d-inline" (click)="updataArticle(article._id)">修改</a>
+          <a class="cur-pointer btn-a  d-inline" (click)="delArticle(article._id)">删除</a>
+        </div>
+          
+      </td>
+
+ 
+    </tr>
+  </tbody>
+
+</table>
+
+
+
+<div *ngIf="articles.length === 0 || !articles">无数据！</div>
+<div *ngIf="articles.length > 0">
+  <ngb-pagination [collectionSize]=total [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"
+    (pageChange)="pageChange()"></ngb-pagination>
+</div>

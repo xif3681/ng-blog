@@ -1,6 +1,9 @@
 {
     "/articles": {
-        "target": "http://localhost:3000"
+        "target": "http://localhost:10005"
+    },
+    "/blog-api": {
+        "target": "http://149.28.77.81"
     }
 
 }

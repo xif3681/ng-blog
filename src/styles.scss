@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
 .ql-container {
     min-height:500px;
+}
+.cur-pointer {
+    cursor: pointer;
 }
